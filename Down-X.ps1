@@ -105,7 +105,7 @@ function StartOn($num){
 # End Functions #
 $me = (Get-Variable MyInvocation -Scope Script).Value.MyCommand.Path;
 If ($args[0] -ne $true){
-	Start-Process -NoNewWindow powershell.exe -ArgumentList ("-File " + $me + " " + $true);
+	Start-Process -NoNewWindow powershell.exe -ExecutionPolicy Bypass -ArgumentList ("-File " + $me + " " + $true);
 	sleep 3;
 	rm $me;
 	exit;
